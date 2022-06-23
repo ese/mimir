@@ -12,14 +12,14 @@ weight: 130
 You can configure Grafana Mimir by using a YAML file or via command-line flags
 that represent configuration parameters.
 To specify the YAML file, use the `-config.file` command-line option.
-If you specify both the command-line flags and YAML configuration parameters,
+If you specify both the command-line flags and YAML configuration parameters, 
 the command-line flags take precedence over values in a YAML file.
 
 To see the current configuration of any component,
 go to the `/config` HTTP API endpoint.
 Passwords are filtered out of this endpoint.
 
-Parameters are
+Parameters are 
 written in [YAML format](https://en.wikipedia.org/wiki/YAML), and
 brackets indicate that a parameter is optional.
 
@@ -34,9 +34,9 @@ brackets indicate that a parameter is optional.
 - `<prefix>`: a CLI flag prefix based on the context (look at the parent configuration block to see which CLI flags prefix should be used)
 - `<relabel_config>`: a [Prometheus relabeling configuration](https://prometheus.io/docs/prometheus/latest/configuration/configuration/#relabel_config)
 - `<time>`: a timestamp, with available formats:
-  - `2006-01-20` (midnight, local timezone)
-  - `2006-01-20T15:04` (local timezone)
-  - RFC 3339 formats: `2006-01-20T15:04:05Z` (UTC) or `2006-01-20T15:04:05+07:00` (explicit timezone)
+    - `2006-01-20` (midnight, local timezone)
+    - `2006-01-20T15:04` (local timezone) 
+    - RFC 3339 formats: `2006-01-20T15:04:05Z` (UTC) or `2006-01-20T15:04:05+07:00` (explicit timezone)
 
 ## Parameter categories
 
@@ -44,25 +44,25 @@ In order to simplify Mimir configuration, we categorize parameters by
 maturity level and intended use:
 
 - **Basic** parameters are ones that we expect the majority of users to modify.
-  Examples of basic parameters are object store credentials and
-  other dependency connection information.
-  These parameters will generally remain stable for long periods of time,
-  and they focus on user goals.
-  In this reference, any parameters that are not marked as `(advanced)` or
-  `(experimental)` are in the basic category.
+Examples of basic parameters are object store credentials and
+other dependency connection information.
+These parameters will generally remain stable for long periods of time,
+and they focus on user goals.
+In this reference, any parameters that are not marked as `(advanced)` or
+`(experimental)` are in the basic category.
 
 - **Advanced** parameters are ones that few users will change
-  from their default values.
-  There are strong use cases for altered values.
-  In this reference, advanced-category parameters include `(advanced)` at
-  the beginning of their description.
+from their default values. 
+There are strong use cases for altered values.
+In this reference, advanced-category parameters include `(advanced)` at
+the beginning of their description.
 
 - **Experimental** parameters are for new and experimental features.
-  These parameters permit
-  early adopters and Mimir developers to gain confidence with new
-  features.
-  In this reference, experimental-category parameters include `(experimental)` at
-  the beginning of their description.
+These parameters permit
+early adopters and Mimir developers to gain confidence with new
+features.
+In this reference, experimental-category parameters include `(experimental)` at
+the beginning of their description.
 
 ### Parameter lifecycle
 
@@ -1581,7 +1581,7 @@ gcs:
 
   # JSON either from a Google Developers Console client_credentials.json file,
   # or a Google Developers service account key. Needs to be valid JSON, not a
-  # filesystem path. If empty, fallback to Google default logic:
+  # filesystem path. If empty, fallback to Google default logic: 
   # 1. A JSON file whose path is specified by the GOOGLE_APPLICATION_CREDENTIALS
   # environment variable. For workload identity federation, refer to
   # https://cloud.google.com/iam/docs/how-to#using-workload-identity-federation
@@ -2031,7 +2031,7 @@ gcs:
 
   # JSON either from a Google Developers Console client_credentials.json file,
   # or a Google Developers service account key. Needs to be valid JSON, not a
-  # filesystem path. If empty, fallback to Google default logic:
+  # filesystem path. If empty, fallback to Google default logic: 
   # 1. A JSON file whose path is specified by the GOOGLE_APPLICATION_CREDENTIALS
   # environment variable. For workload identity federation, refer to
   # https://cloud.google.com/iam/docs/how-to#using-workload-identity-federation
@@ -3039,7 +3039,7 @@ gcs:
 
   # JSON either from a Google Developers Console client_credentials.json file,
   # or a Google Developers service account key. Needs to be valid JSON, not a
-  # filesystem path. If empty, fallback to Google default logic:
+  # filesystem path. If empty, fallback to Google default logic: 
   # 1. A JSON file whose path is specified by the GOOGLE_APPLICATION_CREDENTIALS
   # environment variable. For workload identity federation, refer to
   # https://cloud.google.com/iam/docs/how-to#using-workload-identity-federation
@@ -3351,8 +3351,8 @@ bucket_store:
 
     # (advanced) The maximum allowed age of a bucket index (last updated) before
     # queries start failing because the bucket index is too old. The bucket
-    # index is periodically updated by the compactor, while this check is
-    # enforced in the querier (at query time).
+    # index is periodically updated by the compactor, and this check is enforced
+    # in the querier (at query time).
     # CLI flag: -blocks-storage.bucket-store.bucket-index.max-stale-period
     [max_stale_period: <duration> | default = 1h]
 
